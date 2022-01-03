@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+html, body, .container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(95deg, #2CABBF, #2C368D);
+    color: #2a2a2a;
+}
+
+.container::before,
+.container::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60vw;
+    height: 200vh;
+    background:#fff;
+    transform: translate(-25%, -50%) rotate(20deg);
+    transition: all .6s ease-in-out; 
+    z-index: -1;
+}
+
+.container::after{
+    top: 50%;
+    left: 100%;
+    transform: translate(25%, -50%) rotate(20deg); 
+}
+
+.box-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 90px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: -20px 50px 100px rgba(0,0,0,.2);
+    border-bottom: 10px solid #0e0e80;
+    transition: all .6s .2s ease-in-out; 
+}
+
+.box-form > h3{
+    font-weight: 400;
+}
+
+.box-form > h2{
+    font-weight: 300;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center; 
+    color: rgba(255, 255, 255, 0.705);
+    z-index: 10;
+    font-size: .9rem;
+}
+
+.box-form#cadastro{
+    top: 50%;
+    left: 0%;
+    transform: translate(-100%, -50%);
+}
+
+.box-form::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150%;
+    height: 100px;
+    background: #2524E9;
+    transform-origin: center;
+    transform:translate(-50%, -45%) rotate(-15deg);
+}
+
+.box-form::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150%;
+    height: 100px;
+    background: #0e0e80;
+    transform-origin: center;
+    transform:translate(-50%, -45%) rotate(8deg);
+}
+
+.box-form .form-control{
+    width: 100%;
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control button{
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: #0e0e80;
+    color: white;
+    border-radius: 17.5px;
+    margin: 10px;
+    transition: transform .5s;
+}
+
+.form-control button:hover{
+    cursor: pointer;
+    transform: translateY(5px); 
+}
+
+.form-control>.input-group{
+    width: 100%;
+    height: 100%;
+    background: rgb(226, 226, 226);
+    margin-bottom: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+}
+
+.input-group input:not(input[type='file']){
+    width: 85%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.input-group input[type='file']{
+    width: 85%;
+    cursor: pointer;
+    /* height: 100%;
+    font-size: .9rem;
+    display: flex;
+    overflow: hidden;  */
+}
+
+/* .input-group input[type='file']::-webkit-file-upload-button{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0 10px;
+    background: rgb(158, 158, 158);
+    cursor: pointer;
+} */
+
+.input-group i{
+    width: 10%;
+    color: #2a2a2a;
+    text-align: center
+}
+
+.input-group > i.pswd,
+.input-group > i.cpswd{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.box-form > p > a{
+    color: #0e0e80;
+}
+
+
+
+@media (max-width: 960px){
+    .box-form{
+        width: 30vw;
+    }
+}
+
+@media (max-width: 768px){
+    .box-form{
+        width: 40vw;
+    }
+}
+
+@media (max-width: 576px){
+    .box-form{
+        width: 90vw;
+    }
+}
+
+/* Animações */
+
+.container.active::after{
+    top: 50%;
+    left: 35%;
+    transform: translate(25%, -50%) rotate(20deg); 
+}
+
+.container.active::before{
+    transform: translate(-225%, -50%) rotate(20deg);
+}
+
+.container.active .box-form#cadastro{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) 
+}
+
+.container.active .box-form#login{
+    top: 50%;
+    left: 100%;
+    transform: translate(100%, -50%) 
+}

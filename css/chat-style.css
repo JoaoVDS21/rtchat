@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 18px
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    font-size: 20px;
+}
+h2{
+    font-size: 18px;
+}
+h3{
+    font-size: 16px;
+    color: #322;
+}
+p{
+    font-size: 14px;
+    color: rgb(77, 54, 54);
+}
+
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(95deg, #2CABBF, #2C368D); 
+}
+
+.box-all{
+    background: white;
+    border-radius: 15px;
+    width: 1100px;
+    height: 85vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    overflow: hidden; 
+}
+
+.side-main-users{
+    display: flex;
+    flex-direction: column;
+    background: rgb(238, 238, 238);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgb(206, 206, 206);
+    z-index: 10;
+}
+
+.profile{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.profile img{
+    margin-right: 20px;
+}
+
+.profile a{
+    font-size: 25px;
+    margin: 0 5px 0 auto;
+    color: rgb(173, 173, 173);
+}
+
+.profile-info p{
+    font-size: 14px;
+    color: #333;
+}
+
+
+.search-bar-box{
+    margin: 15px 0;
+    background: white;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.search-bar-box i{
+    margin-right: 10px;
+}
+.search-bar-box input{
+    background: none;
+    border: none;
+    outline: none;   
+}
+
+.users-list{
+    overflow-x: hidden;
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column;
+    height: calc(85vh - 165px)
+}
+
+.users-list #not-contacts{
+    width: 90%;
+    text-align: center;
+    padding-top: 10px;
+    margin: 10px auto 0 auto;
+    margin-top: 10px;
+    border-top: 1px solid rgb(172, 172, 172);
+    color: rgb(112, 112, 112);
+    display: none;
+}
+
+.users-list::-webkit-scrollbar{
+    width: 6px;
+}
+  
+.users-list::-webkit-scrollbar-thumb{
+    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    background: rgba(212, 212, 212, 0.8); 
+}
+
+.user-box{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+/* .user-box:hover{
+    transform: translateX(5px);
+    background: rgb(231, 231, 231);
+} */
+
+.user-box img{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.user-box i{
+    margin: 0 5px 0 auto;
+    font-size: 11px; 
+    color: rgb(100, 100, 100)
+}
+
+.user-box i.online{
+    color: #09f;
+}
+
+.main-chat{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-user-chat{
+    display: flex;
+    align-items: center;
+    background: rgb(248, 248, 248);
+    padding: 20px;
+    box-shadow: 0  20px 40px rgba(0, 0, 0, 0.096)
+}
+
+.header-user-chat img{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header-user-chat .icons-function{
+    margin: 0 10px 0 auto;
+}
+
+.header-user-chat .icons-function i{
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: rgb(85, 85, 85);
+}
+
+.header-user-chat .icons-function input{
+    max-width: 0;
+    border: none;
+    outline: none;
+    height: 28px;
+    padding: 0px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    margin-left: 15px;
+    transition: .5s linear;
+}
+
+.header-user-chat .icons-function input.show{
+    max-width: 30vw;
+    padding: 10px;
+    transform-origin: right;
+}
+
+form#form-msg{
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(235, 235, 235);
+}
+
+form#form-msg input{
+    width: calc(85% - 10px);
+    background: none;
+    border: none;
+    outline: none; 
+    border-bottom: #999 solid 1px;
+    height: 30px;
+    font-size: .85rem;
+    padding: 0 15px;
+}
+
+form#form-msg button{
+    background: #09f;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    color: white;
+    border-radius: 50%;
+    font-size: .9rem;
+    transform: rotate(25deg);
+    transition: .5s;
+    cursor: pointer;
+}
+
+form#form-msg button:hover{
+    transform: rotate(45deg);
+    background: rgb(0, 119, 199);
+}
+
+.chat-user{
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(85vh - 160px);
+    overflow-y: scroll;
+    scroll-behavior: smooth; 
+}
+
+.chat-user::-webkit-scrollbar {
+    width: 6px;
+}
+  
+.chat-user::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.8);
+}
+
+.chat-user img{
+    width: 25px;
+    height: 25px;
+}
+
+.message{
+    margin: 6px
+}
+
+.message p{
+    box-shadow: 0px 10px 25px rgb(202, 202, 202);
+}
+
+.msg-de{
+    max-width: 40%;
+    margin-left: auto;
+}
+
+.msg-de p{
+    background: #09f;
+    color: white;
+    padding: 6px 10px;
+    font-size: .85rem;
+    word-break: word-all;
+    border-radius: 11px 11px 0px 11px;
+}
+
+.msg-para{
+    max-width: 40%;
+    display: flex;
+}
+
+.msg-para p{
+    background: rgb(224, 224, 224);
+    color: rgb(43, 43, 43);
+    padding: 6px 10px;
+    font-size: .85rem;
+    word-break: word-all;
+    border-radius: 0px 11px 11px 11px;
+    margin-left: 6px;
+    transform: translateY(3px)
+}
+
+.loading{
+    background: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+}
+
+.loading.hide{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.loading .ball{
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-right: 10px solid #09f;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
