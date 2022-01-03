@@ -1,6 +1,6 @@
 ## Sistema de Chat Simples
 
-Chat simples desenvolvido para treinamento de Ajax/JSON e PHP
+Chat simples desenvolvido para treinamento de Ajax/JSON e PHP <br/>
 Foram utilizados:
 - HTML, CSS
 - Javascript
